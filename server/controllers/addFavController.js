@@ -1,4 +1,4 @@
-const connectToDb = require('connect-to-db');
+const connectToDb = require('./connectToDb');
 
 const addFavController = (req, res, next) => {
   const pool = connectToDb();
