@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -26,11 +25,6 @@ module.exports = {
         loader: "babel-loader",
         query: {
           presets: ["@babel/preset-env", "@babel/preset-react"]
-          // plugins: [
-          //   new HtmlWebpackPlugin({
-          //     template: "client/index.html"
-          //   })
-          // ]
         }
 <<<<<<< HEAD
       },{
