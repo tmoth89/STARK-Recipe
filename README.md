@@ -41,6 +41,9 @@ Project name: Feast in the North
 
     2. Set up React Router
 
+*run npm install
+
+dburl: postgres://drcropgq:uTKPGV_PGuQgG-Bskbm51J-PZ-rGmNEm@isilo.db.elephantsql.com:5432/drcropgq
     3. Data
         - hits > recipe > label, image, source, url, shareAs, yield, ingredientLines, calories
         - hits > recipe > digest> Fat, Carbs, Protein
