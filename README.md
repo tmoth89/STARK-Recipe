@@ -5,3 +5,5 @@ Project name: Feast in the North
 [] TO START 
 
 *run npm install
+
+dburl: postgres://drcropgq:uTKPGV_PGuQgG-Bskbm51J-PZ-rGmNEm@isilo.db.elephantsql.com:5432/drcropgq
