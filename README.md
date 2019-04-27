@@ -5,3 +5,5 @@ Project name: Feast in the North
 [] TO START 
 
 *run npm install
+
+*to run nodemon on localhost:3000, npm run server
