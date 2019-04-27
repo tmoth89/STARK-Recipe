@@ -3,7 +3,7 @@ const addFavController = require('./controllers/addFavController');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const removeFavController = reuuire('./controllers/removeFavController')
+const removeFavController = require('./controllers/removeFavController')
 
 const {
   PORT = 3000

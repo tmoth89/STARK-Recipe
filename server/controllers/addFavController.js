@@ -10,7 +10,7 @@ const addFavController = (req, res, next) => {
   const query = {
     name: 'Add Favorite To DB',
     text: 'INSERT INTO favorites_table(id, label, img_url, recipe_url) VALUES($1, $2, $3, $4) RETURNING *;',
-    value: [id, label, img_url, recipe_url]
+    values: [id, label, img_url, recipe_url]
   }
 
   pool.connect(query, (err, result) => {
