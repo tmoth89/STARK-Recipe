@@ -1,30 +1,38 @@
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-  entry: './client/src/index.js',
-  mode: 'production',
+  entry: "./client/src/index.js",
+  output: {
+    path: path.resolve(__dirname, "build"),
+    publicPath: "/build/",
+    filename: "bundle.js"
+  },
+  devServer: {
+    inline: true,
+    port: 8080
+  },
   module: {
+    // mode: "development",
     rules: [
       {
-        test: /\.jsx?/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
+        test: /.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+          presets: ["@babel/preset-env", "@babel/preset-react"]
+          // plugins: [
+          //   new HtmlWebpackPlugin({
+          //     template: "client/index.html"
+          //   })
+          // ]
         }
-      },{
-        test: /\.scss$/,
-        use: [
-          "style-loader", 
-          "css-loader"
-        ]
+      },
+
+      {
+        test: /\.css$/,
+        use: "css-loader"
       }
     ]
-  },
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
-  },
-}
+  }
+};
