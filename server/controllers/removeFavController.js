@@ -8,7 +8,7 @@ const removeFavController = (req, res, next) => {
 
   const query = {
     name: 'Removing from DB',
-    text: "DELETE FROM stock_keys WHERE stock_ticker=$1 RETURNING *;",
+    text: "DELETE FROM favorites_table WHERE label=$1 RETURNING *;",
     values: [targetRow]
   };
 

@@ -1,5 +1,3 @@
-const express = require('express');
-const apiPing = require('./apiPing.js');
 const fetch = require('node-fetch');
 
 // - hits > recipe > label, image, source, url, shareAs, yield, ingredientLines, calories
@@ -11,14 +9,14 @@ const searchController = (req, res, next) => {
   const appKey = '5f5f6bf45e7dd3b097216f12c9208fbb';
   const apiUrl = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${appKey}&from=0&to=16`;
 
-  
+
   fetch(apiUrl)
     .then(response => {
       return response.json();
     })
     .then(myJson => {
       const recipeObjs = [];
-      for (let i=0; i < myJson.hits.length; i++) {
+      for (let i = 0; i < myJson.hits.length; i++) {
         const curr = myJson.hits[i].recipe;
         console.log(curr.digest[0].total)
         const returnObj = {
