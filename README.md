@@ -43,6 +43,6 @@ Project name: Feast in the North
 
 
 dburl: postgres://drcropgq:uTKPGV_PGuQgG-Bskbm51J-PZ-rGmNEm@isilo.db.elephantsql.com:5432/drcropgq
-    3. Data
+    3. [x] Data
         - hits > recipe > label, image, source, url, shareAs, yield, ingredientLines, calories
         - hits > recipe > digest> Fat, Carbs, Protein
