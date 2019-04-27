@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-<<<<<<< HEAD
+
 class Search extends Component {
   constructor() {}
 }
 
 export default Search;
-=======
+
 class ShoppingList extends Component {
   constructor(props) {
     super(props);
@@ -36,4 +36,3 @@ class ShoppingList extends Component {
 }
 
 export default ShoppingList;
->>>>>>> c8ac0407bbb01006a098679cc3314da1c936cd90

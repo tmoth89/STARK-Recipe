@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-<<<<<<< HEAD
+
 class Search extends Component {
   constructor() {}
 }
-=======
+
 const Search = props => {
   return (
     <div>
@@ -20,6 +20,6 @@ const Search = props => {
     </div>
   );
 };
->>>>>>> c8ac0407bbb01006a098679cc3314da1c936cd90
+
 
 export default Search;
