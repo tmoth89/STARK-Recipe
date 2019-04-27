@@ -2,6 +2,7 @@ const searchController = require('./controllers/searchController');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const removeFavController = reuuire('./controllers/removeFavController')
 
 const { 
   PORT = 3000
@@ -47,7 +48,7 @@ app.post('/addIngredientsToList', (req, res)=> {
   res.send();
 });
 
-app.delete('/removeRecipeFromFav', (req, res)=> {
+app.delete('/removeFav', removeFavController, (req, res)=> {
   if (res.locals.err) res.status(404).send(err);
   res.send();
 });
