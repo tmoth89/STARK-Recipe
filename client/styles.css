@@ -1,0 +1,60 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f6f6f6;
+  margin: 10;
+  padding: 0;
+}
+
+#mainContainer {
+  margin: 30px;
+  background: #fff;
+}
+
+/* form {
+  width: 90%;
+} */
+#searchbar {
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+#rightMenuContainer {
+  float: right;
+  width: 400px;
+  height: 760px;
+  border: 1px dotted grey;
+  display: flex;
+  float: right;
+  flex-direction: column;
+}
+
+.rightMenuBox {
+  width: 100%;
+  height: 380px;
+}
+.rightMenuBtn {
+  /* display: flex; */
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  height: 30px;
+}
+
+#searchbar {
+  width: 100%;
+}
+
+#mainbody {
+  margin: 20px;
+  width: 80%;
+}
+#descriptionContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% auto;
+}
+#foodImg {
+  grid-area: 1 / col1-start / 2 / 2;
+}

@@ -2,22 +2,21 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import Search from "./Search.jsx";
-import Favorite from "./Favorite.jsx";
-import ShoppingList from "./ShoppingList.jsx";
-import { timingSafeEqual } from "crypto";
+import RightMenu from "./RightMenu.jsx";
 
 class App extends Component {
-  constructor() {
-    super(props);
-    this.state = {};
-  }
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {};
+  //   }
   render() {
     return (
       <div>
-        <Search />
-        <h1>Weclome to the Start Recipes!</h1>
-        <Favorite />
-        <ShoppingList />
+        <div id="mainContainer">
+          <Search />
+          <div>Weclome to the Start Recipes!</div>
+          <RightMenu />
+        </div>
       </div>
     );
   }
