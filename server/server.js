@@ -48,7 +48,7 @@ app.post('/addIngredientsToList', (req, res) => {
   res.send();
 });
 
-app.delete('/removeFav', (req, res) => {
+app.delete('/removeFav', removeFavController, (req, res) => {
   if (res.locals.err) res.status(404).send(err);
   res.send();
 });
