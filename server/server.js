@@ -1,3 +1,4 @@
+const searchController = require('./controllers/searchController');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -26,9 +27,9 @@ app.get('/main', (req, res)=> {
   res.send();
 });
 
-app.post('/search', (req, res)=> {
+app.post('/search', searchController, (req, res)=> {
   if (res.locals.err) res.status(404).send(err);
-  res.send();
+  res.send(res.locals.apiData);
 });
 
 app.post('/addFav', (req, res)=> {
