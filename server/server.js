@@ -6,6 +6,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const removeFavController = require('./controllers/removeFavController')
 
+const mainShoppingList = require('./controllers/mainShoppingList')
+const mainFavorite = require('./controllers/mainFavorite')
+
 const {
   PORT = 3000
 } = process.env;
@@ -25,9 +28,14 @@ app.use(function (req, res, next) {
 
 
 
-app.get('/main', (req, res) => {
-  if (res.locals.err) res.status(404).send(err);
-  res.send();
+app.get('/mainFavorite', mainFavorite, (req, res) => {
+  if (res.locals.err) res.status(404).send(res.locals.err);
+  res.send(res.locals.data);
+});
+
+app.get('/mainShoppingList', mainShoppingList, (req, res) => {
+  if (res.locals.err) res.status(404).send(res.locals.err);
+  res.send(res.locals.data);
 });
 
 app.post('/search', searchController, (req, res) => {
