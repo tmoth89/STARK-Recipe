@@ -13,7 +13,7 @@ const addFavController = (req, res, next) => {
     values: [id, label, img_url, recipe_url]
   }
 
-  pool.connect(query, (err, result) => {
+  pool.query(query, (err, result) => {
     if (err) {
       return console.error('Error executing query', err)
     }

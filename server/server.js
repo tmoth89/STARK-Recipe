@@ -1,5 +1,6 @@
 const searchController = require('./controllers/searchController');
 const addFavController = require('./controllers/addFavController');
+const addIngredientsToList = require('./controllers/addIngredientsToList');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -44,9 +45,9 @@ app.post('/addFav', addFavController, (req, res) => {
 //   res.send();
 // });
 
-app.post('/addIngredientsToList', (req, res) => {
+app.post('/addIngredientsToList', addIngredientsToList, (req, res) => {
   if (res.locals.err) res.status(404).send(err);
-  res.send();
+  res.send(res.locals.addIngredientsToList);
 });
 
 app.delete('/removeFav', removeFavController, (req, res) => {
