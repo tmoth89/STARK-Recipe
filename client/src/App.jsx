@@ -13,9 +13,9 @@ class App extends Component {
     return (
       <div>
         <div id="mainContainer">
-          <Search />
-          <div>Weclome to the Start Recipes!</div>
-          <RightMenu />
+          <Search/>
+          <div>Weclome to the Stark Recipes!</div>
+          <RightMenu/>
         </div>
       </div>
     );

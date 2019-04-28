@@ -1,10 +1,9 @@
 const path = require("path");
 
 module.exports = {
-<<<<<<< HEAD
+
   entry: './client/src/index.js',
   mode: 'production',
-=======
   entry: "./client/src/index.js",
   output: {
     path: path.resolve(__dirname, "build"),
@@ -15,7 +14,6 @@ module.exports = {
     inline: true,
     port: 8080
   },
->>>>>>> c8ac0407bbb01006a098679cc3314da1c936cd90
   module: {
     // mode: "development",
     rules: [
@@ -26,8 +24,9 @@ module.exports = {
         query: {
           presets: ["@babel/preset-env", "@babel/preset-react"]
         }
-<<<<<<< HEAD
-      },{
+
+      },
+      {
         test: /\.scss$/,
         use: [
           "style-loader",
@@ -35,20 +34,5 @@ module.exports = {
         ]
       }
     ]
-  },
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
-  },
-}
-=======
-      },
-
-      {
-        test: /\.css$/,
-        use: "css-loader"
-      }
-    ]
-  }
-};
->>>>>>> c8ac0407bbb01006a098679cc3314da1c936cd90
+   }
+  };
