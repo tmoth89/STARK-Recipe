@@ -12,7 +12,6 @@ module.exports = {
     port: 8080
   },
   module: {
-    // mode: "development",
     rules: [
       {
         test: /.(js|jsx)$/,
@@ -22,7 +21,6 @@ module.exports = {
           presets: ["@babel/preset-env", "@babel/preset-react"]
         }
       },
-
       {
         test: /\.css$/,
         use: "css-loader"
