@@ -5,16 +5,14 @@ import Search from "./Search.jsx";
 import RightMenu from "./RightMenu.jsx";
 
 class App extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //     this.state = {};
-  //   }
   render() {
     return (
       <div>
-        <div id="mainContainer">
+        <div>
           <Search />
-          <div>Weclome to the Start Recipes!</div>
+        </div>
+        <div id="mainContainer">
+          <p>Weclome to the Stark Recipes!</p>
           <RightMenu />
         </div>
       </div>

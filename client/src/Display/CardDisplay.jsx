@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-// const url = '';
-
 class CardDisplay extends Component {
   constructor(props) {
     super(props);
@@ -19,24 +17,34 @@ class CardDisplay extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   getMenuInfo();
+  // }
+
+  // getMenuInfo() {
+  //   axios.get("http://localhost:3000/mainFavorite").then(res => {
+  //     this.setState({ foods: res.data });
+  //   });
+  // }
+
   render() {
     <div id="mainbody">
       <div id="descriptionContainer">
-        <img id="foodImg" src={this.props.image} />
-        <h3 id="label">{this.props.label}</h3>
-        <p>see full recipe on: {this.props.source}</p>
+        <img id="foodImg" src={this.state.image} />
+        <h3 id="label">{this.state.label}</h3>
+        <p>see full recipe on: {this.state.source}</p>
         <button> Save </button>
       </div>
-      <div id="ingredients">{this.props.ingredientLines}</div>
+      <div id="ingredients">{this.state.ingredientLines}</div>
 
       <div id="nutirion">
         Nutrition <br />
-        {this.props.calories}
-        {this.props.yield}
+        {this.state.calories}
+        {this.state.yield}
         <br />
-        {this.props.fats}
-        {this.props.carbs}
-        {this.props.protein}
+        {this.state.fats}
+        {this.state.carbs}
+        {this.state.protein}
       </div>
     </div>;
   }
