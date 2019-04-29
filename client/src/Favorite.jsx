@@ -9,19 +9,29 @@ class Favorite extends Component {
       foods: [],
       selectedMenu: ""
     };
+    this.connectToRecipe = this.connectToRecipe.bind(this);
   }
 
   componentDidMount() {
     axios.get("http://localhost:3000/mainFavorite").then(res => {
-      console.log(res);
+      // console.log(res);
       this.setState({ foods: res.data });
     });
   }
 
+  connectToRecipe(e) {}
+
   render() {
     const favoriteBox = this.state.foods.map(food => (
-      <button className="menuBox" key={food.label}>
-        {food.hits.recipe.image} {food.hits.recipe.label}
+      <button
+        className="menuBox"
+        key={food.label}
+        onClick={event => {
+          this.connectToRecipe(even.target.value);
+          this.setState({ selectedMenu: event.target.value });
+        }}
+      >
+        {food.image_url} {food.label}
       </button>
     ));
 
@@ -35,6 +45,7 @@ class Favorite extends Component {
         <Collapsible trigger={<FavoriteBoxTrigger />} transitionTime={200}>
           <div>{favoriteBox}</div>
         </Collapsible>
+
         {/* </div> */}
       </div>
     );

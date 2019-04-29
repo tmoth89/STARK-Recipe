@@ -4,6 +4,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const removeFavController = require('./controllers/removeFavController')
+const removeList = require('./controllers/removeList')
+const mainShoppingList = require('./controllers/mainShoppingList')
+const mainFavorite = require('./controllers/mainFavorite')
 
 const {
   PORT = 3000
@@ -24,9 +27,14 @@ app.use(function (req, res, next) {
 
 
 
-app.get('/main', (req, res) => {
-  if (res.locals.err) res.status(404).send(err);
-  res.send();
+app.get('/mainFavorite', mainFavorite, (req, res) => {
+  if (res.locals.err) res.status(404).send(res.locals.err);
+  res.send(res.locals.data);
+});
+
+app.get('/mainShoppingList', mainShoppingList, (req, res) => {
+  if (res.locals.err) res.status(404).send(res.locals.err);
+  res.send(res.locals.data);
 });
 
 app.post('/search', searchController, (req, res) => {
@@ -39,29 +47,19 @@ app.post('/addFav', addFavController, (req, res) => {
   res.send(res.locals.addFav);
 });
 
-// app.post('/addOwnRecipe', (req, res) => {
-//   if (res.locals.err) res.status(404).send(err);
-//   res.send();
-// });
-
 app.post('/addIngredientsToList', (req, res) => {
   if (res.locals.err) res.status(404).send(err);
-  res.send();
+  res.send('Booby Drop Added');
 });
 
 app.delete('/removeFav', removeFavController, (req, res)=> {
   if (res.locals.err) res.status(404).send(res.locals.err);
-  res.send();
+  res.send('Booby Drop Favs');
 });
 
-// app.delete('/removeOwnRecipe', (req, res) => {
-//   if (res.locals.err) res.status(404).send(err);
-//   res.send();
-// });
-
-app.delete('/removeList', (req, res) => {
-  if (res.locals.err) res.status(404).send(err);
-  res.send();
+app.delete('/removeList', removeList, (req, res) => {
+  if (res.locals.err) res.status(404).send(res.locals.err);
+  res.send('Booby Drop Tables');
 })
 
 app.get('*', (req, res) => {
@@ -73,5 +71,3 @@ if (require.main === module) {
     console.log('server started at http://localhost:' + PORT);
   });
 };
-
-// export default app;

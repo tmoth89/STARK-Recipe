@@ -14,7 +14,6 @@ module.exports = {
     publicPath: "localhost:8080/build"
   },
   module: {
-    // mode: "development",
     rules: [
       {
         test: /.(js|jsx)$/,
@@ -24,7 +23,6 @@ module.exports = {
           presets: ["@babel/preset-env", "@babel/preset-react"]
         }
       },
-
       {
         test: /\.css$/,
         use: "css-loader"
