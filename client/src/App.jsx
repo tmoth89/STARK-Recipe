@@ -8,9 +8,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div id="mainContainer">
+        <div>
           <Search />
-          <div>Weclome to the Stark Recipes!</div>
+        </div>
+        <div id="mainContainer">
+          <p>Weclome to the Stark Recipes!</p>
           <RightMenu />
         </div>
       </div>
