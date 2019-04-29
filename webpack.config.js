@@ -15,7 +15,6 @@ module.exports = {
     port: 8080
   },
   module: {
-    // mode: "development",
     rules: [
       {
         test: /.(js|jsx)$/,
@@ -24,7 +23,6 @@ module.exports = {
         query: {
           presets: ["@babel/preset-env", "@babel/preset-react"]
         }
-
       },
       {
         test: /\.scss$/,

@@ -18,7 +18,6 @@ const searchController = (req, res, next) => {
       const recipeObjs = [];
       for (let i = 0; i < myJson.hits.length; i++) {
         const curr = myJson.hits[i].recipe;
-        console.log(curr.digest[0].total)
         const returnObj = {
           label: curr.label,
           image: curr.image,
