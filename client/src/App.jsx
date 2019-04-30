@@ -93,7 +93,10 @@ class App extends Component {
               <RightMenu className="" onCardClick={this.onCardClick} />
             </div>
           ) : (
-              <p>Welcome to the Stark Recipes!</p>
+              <div>
+                <span id='welcome'>Welcome to the Stark Recipes!</span>
+                <RightMenu className="" onCardClick={this.onCardClick} />
+              </div>
             )}
 
         </div>

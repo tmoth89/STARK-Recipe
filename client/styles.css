@@ -131,3 +131,12 @@ body {
 #foodImg {
   grid-area: 1 / col1-start / 2 / 2;
 }
+
+#welcome {
+  margin-top: 300px;
+  margin-bottom: 300px;
+  font-size: 100px;
+  text-align: center;
+  width: 80%;
+  display: inline-block;
+}
