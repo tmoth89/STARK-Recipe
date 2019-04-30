@@ -74,7 +74,7 @@ body {
 }
 #rightMenuContainer {
   float: right;
-  width: 400px;
+  width: 300px;
   height: 760px;
   border: 1px dotted grey;
   display: flex;
@@ -100,6 +100,21 @@ body {
   vertical-align: middle;
 }
 
+.boxArea {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.card {
+  text-align: center;
+  background-color: rgb(206, 190, 190);
+
+  /* border: dotted 1px rgb(71, 70, 70); */
+  display: inline-block;
+}
+
 #searchbar {
   width: 100%;
 }
@@ -115,4 +130,13 @@ body {
 }
 #foodImg {
   grid-area: 1 / col1-start / 2 / 2;
+}
+
+#welcome {
+  margin-top: 300px;
+  margin-bottom: 300px;
+  font-size: 100px;
+  text-align: center;
+  width: 80%;
+  display: inline-block;
 }
