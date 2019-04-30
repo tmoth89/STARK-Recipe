@@ -1,31 +1,52 @@
 import React, { Component } from "react";
-
-const url =
-  "https://api.edamam.com/search?q=chicken&app_id=f8182a87&app_key=5f5f6bf45e7dd3b097216f12c9208fbb&from=0&to=3&calories=591-722&health=alcohol-free";
+import axios from "axios";
+import Collapsible from "react-collapsible";
 
 class Favorite extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foods: {}
+      foods: [],
+      selectedMenu: ""
     };
+    this.connectToRecipe = this.connectToRecipe.bind(this);
   }
 
-  //   componentDidMount() {
-  //     axios.get(url).then(res => {
-  //       this.setState({ foods: res.data });
-  //     });
-  //   }
+  componentDidMount() {
+    axios.get("http://localhost:3000/mainFavorite").then(res => {
+      // console.log(res);
+      this.setState({ foods: res.data });
+    });
+  }
+
+  connectToRecipe(e) {}
 
   render() {
-    //   const favoriteBox = this.state.foods.map(food => (
-    //       <div>{foods.hits.recipe.image}</div>
-    //   ))
+    const favoriteBox = this.state.foods.map(food => (
+      <button
+        className="menuBox"
+        key={food.label}
+        onClick={event => {
+          this.connectToRecipe(even.target.value);
+          this.setState({ selectedMenu: event.target.value });
+        }}
+      >
+        {food.image_url} {food.label}
+      </button>
+    ));
+
+    const FavoriteBoxTrigger = () => (
+      <button className="rightMenuBtn">Favorite</button>
+    );
+
     return (
       <div>
-        <div className="rightMenuBox">
-          <button className="rightMenuBtn">Favorite</button>
-        </div>
+        {/* <div className="rightMenuBox"> */}
+        <Collapsible trigger={<FavoriteBoxTrigger />} transitionTime={200}>
+          <div>{favoriteBox}</div>
+        </Collapsible>
+
+        {/* </div> */}
       </div>
     );
   }

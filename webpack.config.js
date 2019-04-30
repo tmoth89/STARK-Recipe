@@ -12,7 +12,9 @@ module.exports = {
   },
   devServer: {
     inline: true,
-    port: 8080
+    port: 8080,
+    proxy: { "/search": "http://localhost:3000" },
+    publicPath: "localhost:8080/build"
   },
   module: {
     rules: [
