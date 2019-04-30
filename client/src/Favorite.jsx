@@ -14,12 +14,11 @@ class Favorite extends Component {
 
   componentDidMount() {
     axios.get("http://localhost:3000/mainFavorite").then(res => {
-      // console.log(res);
       this.setState({ foods: res.data });
     });
   }
 
-  connectToRecipe(e) {}
+  connectToRecipe(e) { }
 
   render() {
     const favoriteBox = this.state.foods.map(food => (
@@ -41,7 +40,6 @@ class Favorite extends Component {
 
     return (
       <div>
-        {/* <div className="rightMenuBox"> */}
         <Collapsible trigger={<FavoriteBoxTrigger />} transitionTime={200}>
           <div>{favoriteBox}</div>
         </Collapsible>
